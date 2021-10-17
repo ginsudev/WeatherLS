@@ -22,7 +22,7 @@
 
 - (void)layoutSubviews {
 	%orig;
-	self.alignmentPercent = 1;
+	self.alignmentPercent = ([UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) ? -1 : 1;
 
 	float imgSize = 70;
 
