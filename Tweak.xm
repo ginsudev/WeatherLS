@@ -22,7 +22,10 @@
 
 - (void)layoutSubviews {
 	%orig;
-	self.alignmentPercent = ([UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) ? -1 : 1;
+
+	if ([UIScreen mainScreen].bounds.size.height > [UIScreen mainScreen].bounds.size.width) {
+		self.alignmentPercent = ([UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) ? -1 : 1;
+	}
 
 	float imgSize = 70;
 
@@ -39,6 +42,14 @@
 		self.tempLabel.textAlignment = NSTextAlignmentCenter;
 		self.tempLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		[self addSubview:self.tempLabel];
+	}
+
+	if ([UIScreen mainScreen].bounds.size.height > [UIScreen mainScreen].bounds.size.width) {
+		self.tempLabel.hidden = NO;
+		self.conditionImageView.hidden = NO;
+	} else {
+		self.tempLabel.hidden = YES;
+		self.conditionImageView.hidden = YES;
 	}
 
 	[self.conditionImageView.widthAnchor constraintEqualToConstant:imgSize].active = YES;
