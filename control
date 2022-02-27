@@ -1,0 +1,10 @@
+Package: com.ginsu.weatherls
+Name: WeatherLS
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Show the weather on the lock screen!
+Maintainer: Ginsu
+Author: Ginsu
+Section: Tweaks
+Depends: ${ORION}, firmware (>= 12.2), com.peterdev.libpddokdo
+Depiction: https://ginsudev.github.io/repo/depictions/weatherls/index.html
