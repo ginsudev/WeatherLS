@@ -10,8 +10,8 @@ import WeatherLSC
 
 final class WLSView: UIView {
     
-    private var image_view: UIImageView!
-    private var temp_label: UILabel!
+    var image_view: UIImageView!
+    var temp_label: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

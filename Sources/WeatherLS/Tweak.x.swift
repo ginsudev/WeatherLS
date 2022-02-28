@@ -25,6 +25,7 @@ class SBFLockScreenDateViewController_Hook: ClassHook<SBFLockScreenDateViewContr
         }
         wls.frame = frame
         
+        wls.temp_label.textColor = Ivars<_UILegibilitySettings>(Ivars<SBUILegibilityLabel>(target.view as! SBFLockScreenDateView)._timeLabel)._legibilitySettings.primaryColor
     }
     
     func _startUpdateTimer() {
